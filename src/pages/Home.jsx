@@ -109,15 +109,24 @@ export default function Home() {
       className={`p-4 min-h-screen transition-colors duration-300
         ${theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white"}`}
     >
-      {/* Botón para cambiar tema */}
-      <div className="flex justify-end mb-4">
-        <button
-          className={`px-4 py-2 rounded ${theme === "light" ? "bg-black text-white" : "bg-red-600 text-black"}`}
-          onClick={toggleTheme}
-        >
-          Cambiar tema
-        </button>
-      </div>
+    {/* Botón para cambiar tema divertido */}
+<div className="flex justify-end mb-4">
+  <button
+    onClick={toggleTheme}
+    className={`
+      px-5 py-2 rounded-full font-bold transition-all duration-300
+      shadow-lg hover:scale-110 hover:shadow-2xl
+      ${theme === "light"
+        ? "bg-black text-yellow-400 hover:bg-yellow-400 hover:text-black"
+        : "bg-red-600 text-white hover:bg-pink-500 hover:text-yellow-200"
+      }
+    `}
+  >
+    {theme === "light" ? "☀️ Modo brillante" : "🌙 Modo oscuro"}
+
+  </button>
+</div>
+
 
       {/* Barra de búsqueda */}
       <SearchBar
